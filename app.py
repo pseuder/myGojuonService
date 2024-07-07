@@ -6,14 +6,18 @@ from PIL import Image, ImageOps
 import skimage.transform
 from io import BytesIO
 from werkzeug.datastructures import FileStorage
-
+import os
 
 from Hiragana.hiraganajapanese import label as hiragana_label
 
 app = Flask(__name__)
 CORS(app)
 
-model = keras.models.load_model("Hiragana/hiragana.h5")
+# absolute path to the model file
+abs_path = os.path.abspath(os.path.dirname(__file__))
+model_path = os.path.join(abs_path, "Hiragana/hiragana.h5")
+print(model_path)
+model = keras.models.load_model(model_path)
 
 def preprocess_image(image_file):
     img = Image.open(image_file).convert("L") 
