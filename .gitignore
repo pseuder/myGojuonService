@@ -8,7 +8,6 @@ venv/
 
 # Ignore .npz and .h5 files
 *.npz
-*.h5
 
 # Ignore ETL8G folder
 ETL8G/
