@@ -1,0 +1,15 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore environment files
+venv/
+.env
+
+# Ignore .npz and .h5 files
+*.npz
+*.h5
+
+# Ignore ETL8G folder
+ETL8G/
+uploads/
